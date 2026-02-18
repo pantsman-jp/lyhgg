@@ -1,3 +1,5 @@
+import Control.Concurrent (Chan)
+
 doubleMe x = x + x
 
 doubleUs x y = doubleMe x + doubleMe y
@@ -12,4 +14,17 @@ boomBangs xs = [if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
 
 length' xs = sum [1 | _ <- xs]
 
+removeNonUppercase :: [Char] -> [Char]
 removeNonUppercase s = [c | c <- s, c `elem` ['A' .. 'Z']]
+
+addThree :: Int -> Int -> Int -> Int
+addThree x y z = x + y + z
+
+factorial :: Integer -> Integer
+factorial n = product [1 .. n]
+
+circumference :: Float -> Float
+circumference r = 2 * pi * r
+
+circumference' :: Double -> Double
+circumference' r = 2 * pi * r

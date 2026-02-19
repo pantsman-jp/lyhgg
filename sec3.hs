@@ -61,3 +61,6 @@ initials firstname lastname = [f] ++ ". " ++ [l] ++ "."
   where
     (f : _) = firstname
     (l : _) = lastname
+
+cylinder :: Double -> Double -> Double
+cylinder r h = let sideArea = 2 * pi * r * h; topArea = pi * r ^ 2 in sideArea + topArea * 2

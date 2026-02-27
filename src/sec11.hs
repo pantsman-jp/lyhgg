@@ -16,3 +16,12 @@ data CMaybe a = CNothing | CJust Int a deriving (Show)
 instance Functor CMaybe where
   fmap f CNothing = CNothing
   fmap f (CJust counter x) = CJust (counter + 1) (f x)
+
+-- 11.3
+main = do
+  a <- (++) <$> getLine <*> getLine
+  putStrLn $ "The two lines concatenated turn out to be: " ++ a
+
+-- 11.4
+sequenceA :: (Applicative f) => [f a] -> f [a]
+sequenceA = foldr (liftA2 (:)) (pure [])
